@@ -6,9 +6,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-axum = "0.7.5"
-dotenvy = "0.15.7"
-dotenvy_macro = "0.15.7"
-sea-orm = { version = "0.12.15", features = ["sqlx-postgres", "runtime-tokio-rustls"] }
-tokio = { version = "1.37.0", features = ["full"] }
-tower-http = { version = "0.5.2", features = ["cors"] }
+axum = "0.7.5" # base untuk backend di rust
+chrono = "0.4.38" # untuk mengubah string tanggal ke format tanggal yg valid
+dotenvy = "0.15.7" # untuk menggunakan environtment variable supaya bisa digunakan di file lain
+dotenvy_macro = "0.15.7" # untuk interaksi file .env dan file lain
+sea-orm = { version = "0.12.15", features = ["sqlx-postgres", "runtime-tokio-rustls"] } # base untuk konek dari apllikasi ke database
+serde = { version = "1.0.202", features = ["derive"] } # digunakan untuk serialization dan deserialization.
+serde_json = "1.0.117" #digunakan untuk bekerja dengan JSON data.
+tokio = { version = "1.37.0", features = ["full"] } # munculnya async fn karena tokio ini
+tower-http = { version = "0.5.2", features = ["cors"] } # untuk buat middleware
